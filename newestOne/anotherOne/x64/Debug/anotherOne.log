@@ -1,0 +1,6 @@
+﻿  Dot.cpp
+  main.cpp
+C:\Dev\anotherOne - Copy - Copy\anotherOne\main.cpp(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Dev\anotherOne - Copy - Copy\anotherOne\main.cpp(141,20): warning C4552: '&': result of expression not used
+  Generating Code...
+  anotherOne.vcxproj -> C:\Dev\anotherOne - Copy - Copy\x64\Debug\anotherOne.exe
