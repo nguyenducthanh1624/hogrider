@@ -1,0 +1,7 @@
+﻿  Dot.cpp
+  Handler.cpp
+  Map.cpp
+  main.cpp
+C:\Dev\anotherOne\anotherOne\main.cpp(129,20): warning C4552: '&': result of expression not used
+  Generating Code...
+  anotherOne.vcxproj -> C:\Dev\anotherOne\x64\Debug\anotherOne.exe

@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Dev\\anotherOne\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\Handler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\Handler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\Handler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\Handler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\Dot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\Dot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\LTexture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\LTexture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\LTexture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\LTexture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|C:\\Dev\\anotherOne\\anotherOne\\Dot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A2639BD-39BB-450D-AC11-88776812A15C}|anotherOne\\anotherOne.vcxproj|solutionrelative:anotherOne\\Dot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Map.cpp",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\Map.cpp",
+              "RelativeDocumentMoniker": "anotherOne\\Map.cpp",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\Map.cpp",
+              "RelativeToolTip": "anotherOne\\Map.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-10T14:39:01.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Map.h",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\Map.h",
+              "RelativeDocumentMoniker": "anotherOne\\Map.h",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\Map.h",
+              "RelativeToolTip": "anotherOne\\Map.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-10T14:16:13.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Handler.cpp",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\Handler.cpp",
+              "RelativeDocumentMoniker": "anotherOne\\Handler.cpp",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\Handler.cpp",
+              "RelativeToolTip": "anotherOne\\Handler.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-20T03:51:22.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Handler.h",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\Handler.h",
+              "RelativeDocumentMoniker": "anotherOne\\Handler.h",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\Handler.h",
+              "RelativeToolTip": "anotherOne\\Handler.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-20T03:51:08.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dot.cpp",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\Dot.cpp",
+              "RelativeDocumentMoniker": "anotherOne\\Dot.cpp",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\Dot.cpp",
+              "RelativeToolTip": "anotherOne\\Dot.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-19T14:23:54.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Dot.h",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\Dot.h",
+              "RelativeDocumentMoniker": "anotherOne\\Dot.h",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\Dot.h",
+              "RelativeToolTip": "anotherOne\\Dot.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-19T14:14:19.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LTexture.cpp",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\LTexture.cpp",
+              "RelativeDocumentMoniker": "anotherOne\\LTexture.cpp",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\LTexture.cpp",
+              "RelativeToolTip": "anotherOne\\LTexture.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-15T15:08:58.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LTexture.h",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\LTexture.h",
+              "RelativeDocumentMoniker": "anotherOne\\LTexture.h",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\LTexture.h",
+              "RelativeToolTip": "anotherOne\\LTexture.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-15T15:03:39.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Dev\\anotherOne\\anotherOne\\main.cpp",
+              "RelativeDocumentMoniker": "anotherOne\\main.cpp",
+              "ToolTip": "C:\\Dev\\anotherOne\\anotherOne\\main.cpp",
+              "RelativeToolTip": "anotherOne\\main.cpp",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-15T15:00:02.849Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
