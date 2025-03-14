@@ -41,12 +41,12 @@ bool checkCollision(SDL_Rect a, SDL_Rect b) {
 
 // cause yknow every texture sheet we load needs an array of rects(clips)
 
-void makeSprites(SDL_Rect* rect, const int nFrames, int spriteW, int spriteH) {
+void makeSprites(SDL_Rect* rect, const int nFrames, int spriteW, int spriteH,int start) {
 	
 	for (int i = 0;i < nFrames;i++) {
 		rect[i].w = spriteW;
 		rect[i].h = spriteH;
-		rect[i].x = spriteW * i;
+		rect[i].x = spriteW * i + start;
 		rect[i].y = 0;
 	}
 }

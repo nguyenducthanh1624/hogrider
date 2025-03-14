@@ -6,7 +6,7 @@
 #include <sstream>
 #include "LTexture.h"
 #include "LTimer.h"
-#include "Dot.h";
+#include "Dot.h"
 
 
 const int SCRW = 640;
@@ -20,9 +20,23 @@ LTexture gFPSTextTexture;
 LTexture gDotTexture;
 LTexture gDatTexture;
 
-const int WALKING_ANIMATION_FRAMES = 17;
+
+
+const int HOG_IDLE_FRAMES = 4;
+const int HOG_MOVE_FRAMES = 8;
+const int HOG_ATK_FRAMES = 5;
+
+
+
+
+
 const int GOBLIN_FRAMES = 11;
-SDL_Rect gSpriteClips[WALKING_ANIMATION_FRAMES];
+
+
+SDL_Rect gHogIdleClips[HOG_IDLE_FRAMES];
+SDL_Rect gHogMoveClips[HOG_MOVE_FRAMES];
+SDL_Rect gHogAtkClips[HOG_ATK_FRAMES];
+
 SDL_Rect gDatSprites[GOBLIN_FRAMES];
 SDL_Window* gWin = nullptr;
 SDL_Renderer* gRen= nullptr;
@@ -50,18 +64,19 @@ int main(int argc, char* args[]) {
 		else {
 			bool quit = false;
 			SDL_Event e;
-			int frame = 0;
+			int startframe = 0;
 			int datFrame = 0;
 
 			SDL_Color textColor = { 0, 0, 0, 255 };
 
-			Dot dot;
-			Dot dat;
+			Dot dot(10,10,30,31);
+			Dot dat(300,300,12,15);
 
 			SDL_Rect wall = { 300,40,40,400 };
 			SDL_RendererFlip flipType = SDL_FLIP_NONE;
+			SDL_RendererFlip facing = SDL_FLIP_NONE;
 			
-
+			
 
 			while (!quit) {
 				while (SDL_PollEvent(&e) != 0) {
@@ -69,42 +84,65 @@ int main(int argc, char* args[]) {
 						quit = true;
 					}
 					else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_LEFT ) {
-						
 						flipType = SDL_FLIP_HORIZONTAL;
-						
 					}
 					else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_RIGHT ) {
-						
-						
 						flipType = SDL_FLIP_NONE;
 					}
-
 					dot.handleEvent(e);
 					
+				}
 
-		
+				if (dat.getPosX() >= dot.getPosX()) {
+					facing = SDL_FLIP_HORIZONTAL;
+				}
+				else {
+					facing = SDL_FLIP_NONE;
 				}
 				dot.move(SCRW,SCRH,wall);
-
+				dat.walk(SCRW, SCRH, wall, dot.getCollider(), dot.getPosX(), dot.getPosY());
+				
+				
+				
 				SDL_SetRenderDrawColor(gRen, 0xFF, 0xFF, 0xFF, 0xFF);
 				SDL_RenderClear(gRen);
 
-				SDL_Rect* currentClip = &gSpriteClips[frame / 17];
+				
 				SDL_Rect* DatClip = &gDatSprites[datFrame / GOBLIN_FRAMES];
 				
+				SDL_Rect* currentClip = &gHogIdleClips[startframe / 4];
+				int lastFrame = HOG_IDLE_FRAMES;
+				switch (dot.getStatus()) {
+				case 0:
+					currentClip = &gHogIdleClips[startframe / 5];
+					lastFrame = HOG_IDLE_FRAMES;
+					break;
+				case 1:
+					currentClip = &gHogMoveClips[startframe / 4];
+					lastFrame = HOG_MOVE_FRAMES;
+					break;
+				case 2:
+					currentClip = &gHogAtkClips[startframe / 4];
+					lastFrame = HOG_ATK_FRAMES;
+					break;
+				}
+
+
 
 				SDL_SetRenderDrawColor(gRen, 0x00, 0x00, 0x00, 0xFF);
 				SDL_RenderDrawRect(gRen, &wall);
 
 				dot.render(gRen,gDotTexture,currentClip,flipType);
-				dat.render(gRen, gDatTexture, DatClip,SDL_FLIP_NONE);
+				dat.render(gRen, gDatTexture, DatClip,facing);
 
 				SDL_RenderPresent(gRen);
 
-				++frame;
+				++startframe;
 				++datFrame;
-
-				if (frame / 17 >= WALKING_ANIMATION_FRAMES) frame = 0;
+				
+				
+				
+				if (startframe / 4 >= lastFrame) startframe = 0;
 
 				if (datFrame / GOBLIN_FRAMES>= GOBLIN_FRAMES) datFrame = 0;
 
@@ -152,29 +190,11 @@ bool loadMedia() {
 		printf("ffftftftf\n");
 	}
 
-
-	//Set sprite clips
-	/*gSpriteClips[0].x = 0;
-	gSpriteClips[0].y = 0;
-	gSpriteClips[0].w = 64;
-	gSpriteClips[0].h = 205;
-
-	gSpriteClips[1].x = 64;
-	gSpriteClips[1].y = 0;
-	gSpriteClips[1].w = 64;
-	gSpriteClips[1].h = 205;
-
-	gSpriteClips[2].x = 128;
-	gSpriteClips[2].y = 0;
-	gSpriteClips[2].w = 64;
-	gSpriteClips[2].h = 205;
-
-	gSpriteClips[3].x = 192;
-	gSpriteClips[3].y = 0;
-	gSpriteClips[3].w = 64;
-	gSpriteClips[3].h = 205;*/
-
-	makeSprites(gSpriteClips, 17, 30, 31);
+	//makeSprites(gSpriteClips, HOG_FRAMES, 30, 31);
+	//makeSprites(gSpi)
+	makeSprites(gHogIdleClips, 4, 30, 31);
+	makeSprites(gHogMoveClips, 8, 30, 31, 120);
+	makeSprites(gHogAtkClips, 5, 30, 31, 360);
 	makeSprites(gDatSprites, GOBLIN_FRAMES, 12, 15);
 
 	return success;

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <cmath>
 #include "LTexture.h"
 #include "Handler.h"
 
@@ -13,29 +14,39 @@
 
 class Dot {
 public:
-	static const int DOT_W = 20;
-	static const int DOT_H = 20;
+	/*static const int DOT_W = 20;
+	static const int DOT_H = 20;*/
 
-	static const int DOT_VEL = 10;
-	static const int JUMP_HEIGHT = 30;
-	static const int GRAVITY = 5;
+	static const int DOT_VEL = 5;
+	//static const int JUMP_HEIGHT = 30;
+	//static const int GRAVITY = 5;
 
-	Dot();
+	Dot(int x , int y ,int w, int h);
 
-	bool inAir = false;
+	
 	void handleEvent(SDL_Event &e);
 
 	void move(const int SCRW,const int SCRH ,SDL_Rect& wall);
+	void walk(const int SCRW, const int SCRH, SDL_Rect& wall,SDL_Rect entity, int x, int y);
 
 	void render(SDL_Renderer* gRen,LTexture &gDotTexture,SDL_Rect* clip,SDL_RendererFlip flip);
 
 
 	int getPosX();
 	int getPosY();
+
+	int getStatus();
+
+	SDL_Rect getCollider();
+
+	
 private:
 	int mPosX, mPosY;
 
 	int mVelX, mVelY;
+	
+	int mStatus;
+	
 
 	SDL_Rect mCollider;
 

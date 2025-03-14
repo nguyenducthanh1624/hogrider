@@ -3,20 +3,25 @@
 
 
 
-Dot::Dot() {
-	mPosX = 0;
-	mPosY = 0;
+Dot::Dot(int x ,int y, int w ,int h) {
+	mPosX = x;
+	mPosY = y;
 
-	mCollider.w = DOT_W;
-	mCollider.h = DOT_H;
+	mCollider.w = w;
+	mCollider.h = h;
 
 	mVelX = 0;
 	mVelY = 0;
 
+	mStatus = 0; // 0 means idle
+
 }
 
 void Dot::handleEvent(SDL_Event& e) {
+	
 	if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
+		
+		mStatus = 1; // 1 means moving
 		switch (e.key.keysym.sym) 
 		{
 		case SDLK_UP:
@@ -33,23 +38,29 @@ void Dot::handleEvent(SDL_Event& e) {
 			break;
 
 		case SDLK_SPACE:
+			mStatus = 2;
+			//mPosY -= JUMP_HEIGHT;
+			//std::cout << mPosY << std::endl;
 			
-			mPosY -= JUMP_HEIGHT;
-
-			//mPosY += JUMP_HEIGHT;
 			break;
 		}
+		//std::cout << mVelX << std::endl;
 	}
 	else if (e.type == SDL_KEYUP && e.key.repeat == 0) {
+		//mStatus = 0;
+		//std::cout << "ococc" << std::endl;
 		switch (e.key.keysym.sym) 
 		{
-		case SDLK_UP: mVelY += DOT_VEL;break;
-		case SDLK_DOWN: mVelY -= DOT_VEL; break;
-		case SDLK_RIGHT:mVelX -= DOT_VEL;break;
-		case SDLK_LEFT: mVelX += DOT_VEL;break;
-		case SDLK_SPACE: mPosY += JUMP_HEIGHT;break;
+			
+		case SDLK_UP: mVelY += DOT_VEL;mStatus = 0;break;
+		case SDLK_DOWN: mVelY -= DOT_VEL;mStatus = 0; break;
+		case SDLK_RIGHT:mVelX -= DOT_VEL;mStatus = 0;break;
+		case SDLK_LEFT: mVelX += DOT_VEL;mStatus = 0;break;
+		case SDLK_SPACE: mStatus=0;break;
 		}
+		
 	}
+	//std::cout << mStatus<< std::endl;
 }
 
 //this one also need modification
@@ -59,17 +70,18 @@ void Dot::move(const int SCRW, const int SCRH,SDL_Rect& wall) {
 	mCollider.x = mPosX;
 
 
-	if ((mPosX < 0) || (mPosX + DOT_W > SCRW) ||checkCollision(mCollider,wall))
+	if ((mPosX < 0) || (mPosX + mCollider.w > SCRW) ||checkCollision(mCollider,wall))
 	{
 		mPosX -= mVelX;
 		mCollider.x = mPosX;
 	}
-	mVelY += GRAVITY;
+
+	//mVelY += GRAVITY;
 	mPosY += mVelY;
 	
 	
 	mCollider.y = mPosY;
-	if ((mPosY < 0) || (mPosY + DOT_H > SCRH-100) || checkCollision(mCollider,wall)) {
+	if ((mPosY < 0) || (mPosY + mCollider.h > SCRH-100) || checkCollision(mCollider,wall)) {
 		
 		mPosY -= mVelY;
 		mCollider.y = mPosY;
@@ -78,6 +90,44 @@ void Dot::move(const int SCRW, const int SCRH,SDL_Rect& wall) {
 
 	
 }
+
+//HOLY BALLS IT ACTUALLY WORKED
+//THANK YOU RANDOM STRANGER ON REDDIT
+void Dot::walk(const int SCRW, const int SCRH, SDL_Rect& wall,SDL_Rect entity, int x, int y) {
+	if (mPosX != x-15 || mPosY != y) {
+		
+		//THE ENEMY NEEDS TO KNOW THE POSITION OF THE PLAYER SO IT CAN KINDA MAKE A VECTOR POINTING TORWARDS THE PLAYER
+		//THEN IT NEEDS TO NORMALIZE THAT VECTOR SO IT CAN CONSTANTLY MOVE TORWARDS THE PLAYER
+
+		//OK SO THE ENEMIES SOMETIMES LOOK LIKE THEY'RE PHASING OUT OF REALITY
+		//GOTTA IMPROVE THAT WHOLE NORMALIZATION THING
+		 mPosX += 3 * (x - mPosX) / sqrt((x - mPosX) * (x - mPosX) + (y - mPosY) * (y - mPosY));
+		 mPosY += 3 *  (y - mPosY) / sqrt((x - mPosX) * (x - mPosX) + (y - mPosY) * (y - mPosY));
+		
+		//mVelX -= 10;
+	}
+
+	mCollider.x = mPosX;
+	if (mPosX < 0 || (mPosX + mCollider.w > SCRW) || checkCollision(mCollider, entity)) {
+		mPosX = x - 15;
+		mCollider.x = mPosX;
+	}
+
+	mCollider.y = mPosY;
+	if ((mPosY < 0) || (mPosY + mCollider.h > SCRH - 100) || checkCollision(mCollider, entity)) {
+
+		//mPosY -= mVelY;
+		mPosY = y;
+		mCollider.y = mPosY;
+
+	}
+	
+}
+
+int Dot::getStatus() {
+	return mStatus;
+}
+
 
 //gotta modify this as well
 //because the render function of ltexture takes in the global renderer
@@ -99,4 +149,8 @@ int Dot::getPosX() {
 
 int Dot::getPosY() {
 	return mPosY;
+}
+
+SDL_Rect Dot::getCollider() {
+	return mCollider;
 }

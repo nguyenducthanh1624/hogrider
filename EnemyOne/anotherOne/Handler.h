@@ -8,6 +8,6 @@
 bool checkCollision(SDL_Rect a, SDL_Rect b);
 
 
-void makeSprites(SDL_Rect* rect,const int nFrames, int spriteW, int spriteH);
+void makeSprites(SDL_Rect* rect,const int nFrames, int spriteW, int spriteH,int start=0);
 	
 
